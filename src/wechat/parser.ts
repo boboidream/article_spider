@@ -205,7 +205,7 @@ export class WechatParser {
         const imagesMeta = [];
         const imagesP = contentElement.find('img').toArray().map(async (img, index) => {
             const src = img.attribs['data-src'] || img.attribs['data-backsrc'] || img.attribs['src'];
-            const type = img.attribs['data-type'] || 'jpg';
+            const type = img.attribs['data-type'].split('?')[0] || 'jpg';
             if (!src || src.indexOf('file://') === 0) {
                 console.warn(`缓存图片失败:${$.html(img, { decodeEntities: false })}`);
                 return null;

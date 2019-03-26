@@ -5,7 +5,6 @@ export interface WechatParseOptions {
     mode?: 'offline' | 'sougou' | 'all';
     biz?: string;
     cookie?: string;
-    appmsg_token?: string;
 }
 
 export interface Page {
